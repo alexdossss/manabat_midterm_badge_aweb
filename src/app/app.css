@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container for the entire navbar */
+.navbar {
+  display: flex;
+  justify-content: center; /* Centers the links like in the image */
+  align-items: center;
+  padding: 20px 0;
+  background-color: #181818; /* Monstroid Blue Gradient */
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Individual Link Styling */
+.navbar a {
+  color: rgba(255, 255, 255, 0.8); /* Slightly transparent white for inactive state */
+  text-decoration: none;
+  margin: 0 20px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+}
+
+/* Hover and Active States */
+.navbar a:hover,
+.navbar a.active {
+  color: #ffffff; /* Pure white on hover/active */
+}
+
+/* Optional: Add the specific Monstroid logo font feel */
+.navbar a:first-child {
+  /* If you want "Home" to stand out slightly more */
+}

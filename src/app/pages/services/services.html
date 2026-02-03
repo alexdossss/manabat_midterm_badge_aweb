@@ -1,0 +1,26 @@
+<div class="bg-container">
+  <div class="blob"></div>
+  <div class="blob"></div>
+  <div class="blob"></div>
+</div>
+
+<div class="services-section">
+  <h2>Service Tickets</h2>
+
+  <div class="services-search">
+    <input type="text" placeholder="Search services..." [(ngModel)]="searchTerm" (ngModelChange)="search$.next($event)" />
+  </div>
+
+  <div *ngIf="loading" class="status-msg loading">Loading services...</div>
+  <div *ngIf="error" class="status-msg error">{{ error }}</div>
+
+  <ul class="services-list">
+    <li *ngFor="let post of filteredPosts$ | async">
+      <div class="ticket-content">
+        <strong>{{ post.title | uppercase }}</strong>
+        <p>{{ post.body | truncate:60 }}</p>
+        <small>Post as JSON: {{ post | json }}</small>
+      </div>
+    </li>
+  </ul>
+</div>

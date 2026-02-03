@@ -1,0 +1,137 @@
+/* Container */
+.services-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+}
+
+.services-section h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 25px;
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Search Bar - Adding Glow and Entrance */
+.services-search {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+.services-search input {
+  width: 100%;
+  max-width: 500px;
+  padding: 15px 25px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  color: white;
+  font-size: 1rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  outline: none;
+}
+
+.services-search input:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #00eaff;
+  box-shadow: 0 0 25px rgba(0, 234, 255, 0.3);
+  transform: scale(1.02);
+}
+
+/* Status Messages */
+.status-msg {
+  text-align: center;
+  margin: 20px 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.loading { color: #00eaff; animation: pulse 1.5s infinite; }
+.error { color: #ff4b4b; }
+
+/* Services List (Standard List View) */
+.services-list {
+  list-style: none;
+  padding: 0;
+}
+
+.services-list li {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border-left: 5px solid #00eaff; /* Electric Cyan accent */
+  margin-bottom: 15px;
+  padding: 25px;
+  border-radius: 0 15px 15px 0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: slideIn 0.5s ease-out backwards;
+}
+
+/* Hover: Move right and glow */
+.services-list li:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(15px) scale(1.01);
+  border-left: 5px solid #ffffff;
+  box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Staggered Load Animation (Applied to the first 5 items) */
+.services-list li:nth-child(1) { animation-delay: 0.1s; }
+.services-list li:nth-child(2) { animation-delay: 0.2s; }
+.services-list li:nth-child(3) { animation-delay: 0.3s; }
+.services-list li:nth-child(4) { animation-delay: 0.4s; }
+.services-list li:nth-child(5) { animation-delay: 0.5s; }
+
+/* Text Elements */
+.services-list strong {
+  display: block;
+  font-size: 1.2rem;
+  color: #00eaff;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.services-list li:hover strong {
+  color: #ffffff;
+}
+
+.services-list p {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  margin-bottom: 12px;
+}
+
+/* JSON Code Block */
+.services-list small {
+  display: block;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 12px;
+  border-radius: 8px;
+  font-family: 'Consolas', monospace;
+  font-size: 0.8rem;
+  color: #a0aec0;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ANIMATION KEYFRAMES */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}

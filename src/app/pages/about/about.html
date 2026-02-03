@@ -1,0 +1,17 @@
+<div class="bg-container">
+  <div class="blob"></div>
+  <div class="blob"></div>
+  <div class="blob"></div>
+</div>
+
+<div class="about-section">
+  <h2>About Page</h2>
+  <p>Today is: {{ today | date:'fullDate' }}</p>
+  <ul>
+    <li *ngFor="let post of (posts$ | async) | slice:0:3">
+      <strong>{{ post.title | uppercase }}</strong>
+      <p>{{ post.body | truncate:60 }}</p>
+      <small>Post as JSON: {{ post | json }}</small>
+    </li>
+  </ul>
+</div>

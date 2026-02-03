@@ -1,0 +1,23 @@
+<div class="bg-container">
+  <div class="blob"></div>
+  <div class="blob"></div>
+  <div class="blob"></div>
+</div>
+
+<div class="main-content">
+  <div class="home-welcome">
+    <span>Alexander Manabat</span> <br>
+    Welcome to the Community Help Desk Portal
+  </div>
+
+  <div class="home-latest">
+    <h2>Latest Updates</h2>
+    <ul>
+      <li *ngFor="let post of posts$ | async">
+        <strong>{{ post.title | uppercase }}</strong>
+        <p>{{ post.body | slice:0:60 }}...</p>
+        <div class="card-arrow">→</div>
+      </li>
+    </ul>
+  </div>
+</div>

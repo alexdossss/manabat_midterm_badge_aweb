@@ -1,0 +1,49 @@
+<div class="bg-container">
+  <div class="blob"></div>
+  <div class="blob"></div>
+  <div class="blob"></div>
+</div>
+
+<div class="contact-section">
+  <h2>Contact Us</h2>
+
+  <div class="contact-grid">
+    <form (ngSubmit)="submitForm()" #contactForm="ngForm" class="glass-form">
+      <label>
+        Name
+        <input name="name" [(ngModel)]="name" required placeholder="Enter your name" />
+      </label>
+      <label>
+        Email
+        <input name="email" [(ngModel)]="email" required type="email" placeholder="email@example.com" />
+      </label>
+      <label>
+        Message
+        <textarea name="message" [(ngModel)]="message" required placeholder="How can we help?"></textarea>
+      </label>
+      <button type="submit" [disabled]="!contactForm.valid">Submit Message</button>
+    </form>
+
+    <div class="form-preview">
+      <div class="preview-card">
+        <h3>Live Preview</h3>
+        <div class="preview-item">
+          <small>SENDER</small>
+          <p>{{ (name || '---') | uppercase }}</p>
+        </div>
+        <div class="preview-item">
+          <small>REPLY TO</small>
+          <p>{{ email || '---' }}</p>
+        </div>
+        <div class="preview-item">
+          <small>MESSAGE CONTENT</small>
+          <p class="msg-body">{{ message || 'Waiting for input...' }}</p>
+        </div>
+
+        <div *ngIf="submitted" class="success-toast">
+          ✓ Message Sent Successfully!
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
